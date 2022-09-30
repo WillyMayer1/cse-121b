@@ -3,10 +3,10 @@
 /* VARIABLES */
 
 // Step 1: declare and instantiate a variable to hold your name
-
+let myName = "Willian Mayer";
 
 // Step 2: place the value of the name variable into the HTML file (hint: document.querySelector())
-
+document.querySelector("#name").innerHTML = myName;
 
 // Step 3: declare and instantiate a variable to hold the current year
 
@@ -27,30 +27,30 @@
 /* ARRAYS */
 
 // Step 1: declare and instantiate an array variable to hold your favorite foods
-
+let favFood = ["banana", " apple", " watermelon"];
 
 // Step 2: place the values of the favorite foods variable into the HTML file
-
+document.querySelector("#food").innerHTML = favFood;
 
 // Step 3: declare and instantiate a variable to hold another favorite food
-
+let newFood = " pear";
 
 // Step 4: add the variable holding another favorite food to the favorite food array
-
+favFood.push(newFood);
 
 // Step 5: repeat Step 2
-
+document.querySelector("#food").innerHTML = favFood;
 
 // Step 6: remove the first element in the favorite foods array
-
+favFood.shift();
 
 // Step 7: repeat Step 2
-
+document.querySelector("#food").innerHTML = favFood;
 
 // Step 8: remove the last element in the favorite foods array
-
+favFood.pop();
 
 // Step 7: repeat Step 2
-
+document.querySelector("#food").innerHTML = favFood;
 
 
