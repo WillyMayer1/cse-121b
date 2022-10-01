@@ -88,4 +88,4 @@ document.getElementById("sumOfArray").innerHTML = numbers.reduce((previousValue,
 // Step 6: Use the map array method to multiple each element in the array variable by 2 and assign the result to the HTML element with an ID of "multiplied"
 document.getElementById("multiplied").innerHTML = numbers.map(numbers => numbers * 2);
 // Step 7: Use the map and reduce array methods to sum the array elements after multiplying each element by two.  Assign the result to the HTML element with an ID of "sumOfMultiplied"
-document.getElementById("sumOfMultiplied").innerHTML = numbers.reduce((previousValue, numbers) => previousValue + (numbers.map(numbers => numbers * 2)));
+document.getElementById("sumOfMultiplied").innerHTML = numbers.map(numbers => numbers * 2).reduce((previousValue, numbers) => previousValue + numbers);
