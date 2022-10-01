@@ -10,17 +10,17 @@ document.querySelector("#name").innerHTML = myName;
 
 // Step 3: declare and instantiate a variable to hold the current year
 
-
+let currentYear = 2022;
 // Step 4: place the value of the current year variable into the HTML file
-
+document.getElementById("year").innerHTML = currentYear;
 
 // Step 5: declare and instantiate a variable to hold the name of your picture
-
+const personalPhoto = "images/me.jpg";
 
 // Step 6: copy your image into the "images" folder
 
 // Step 7: place the value of the picture variable into the HTML file (hint: document.querySelector().setAttribute())
-
+document.querySelector("img").src = personalPhoto;
 
 
 
