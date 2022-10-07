@@ -15,8 +15,8 @@ let studentInfo = {
 // Step 6: Add another property named placesLived with a value of an empty array
 placesLived: [
 // Step 7: Inside of the empty array above, add a new object with two properties: place and length and values of an empty string
-{place: "",
- length: "",
+{"place": "",
+ "length": "",
 // Step 8: For each property, add appropriate values as strings
 
 // Step 9: Add additional objects with the same properties for each place you've lived
@@ -52,5 +52,9 @@ hobbies.forEach(hobbie => {
 // Step 8: For each object in the <em>placesLived</em> property:
 // - Create an HTML <dt> element and put its place property in the <dt> element
 // - Create an HTML <dd> element and put its length property in the <dd> element
+let placeLivedList = document.querySelector("#places-lived");
+let placeProp = studentInfo[placelived["place"]];
+let lengthProp = studentInfo[placelived["length"]];
+
 
 // Step 9: Append the HTML <dt> and <dd> elements created above to the HTML <dl> element with an ID of places-lived
