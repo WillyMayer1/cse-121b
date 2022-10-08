@@ -13,14 +13,20 @@ let studentInfo = {
 // Step 5: Add another property named hobbies with a value of an array of your hobbies as strings
 "hobbies": ["Videogames", "Meet with friends"],
 // Step 6: Add another property named placesLived with a value of an empty array
-placesLived: [
+"placesLived": []
+};
 // Step 7: Inside of the empty array above, add a new object with two properties: place and length and values of an empty string
-{"place": "",
- "length": "",
+studentInfo["placesLived"].push(venezuela = {"place": "", "length": ""})
 // Step 8: For each property, add appropriate values as strings
-
+studentInfo["placesLived"][0]["place"] = "Venezuela";
+studentInfo["placesLived"][0]["length"] = "18 Years";
 // Step 9: Add additional objects with the same properties for each place you've lived
-},],};
+studentInfo["placesLived"].push(colombia = {"place": "", "length": ""})
+studentInfo["placesLived"].push(argentina = {"place": "", "length": ""})
+studentInfo["placesLived"][1]["place"] = "Colombia";
+studentInfo["placesLived"][1]["length"] = "5 Years";
+studentInfo["placesLived"][2]["place"] = "Argentina";
+studentInfo["placesLived"][2]["length"] = "1 Years";
 
 /* OUTPUT */
 
@@ -53,8 +59,22 @@ hobbies.forEach(hobbie => {
 // - Create an HTML <dt> element and put its place property in the <dt> element
 // - Create an HTML <dd> element and put its length property in the <dd> element
 let placeLivedList = document.querySelector("#places-lived");
-let placeProp = studentInfo[placelived["place"]];
-let lengthProp = studentInfo[placelived["length"]];
+//let placeProp = studentInfo["placeLived"]["place"];
+//let lengthProp = studentInfo["placeLived"]["length"];
 
+placeProp = studentInfo["placesLived"][0]["place"]
+lengthProp = studentInfo["placesLived"][0]["length"]
+
+placeProp.forEach(place => {
+    let dt = document.createElement("dt");
+    dt.textContent = place;
+    placeLivedList.append(dt);
+})
+
+lengthProp.forEach(length => {
+    let dd = document.createElement("dd");
+    dd.textContent = length;
+    placeLivedList.append(dd);
+})
 
 // Step 9: Append the HTML <dt> and <dd> elements created above to the HTML <dl> element with an ID of places-lived
