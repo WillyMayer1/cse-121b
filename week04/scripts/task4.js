@@ -9,20 +9,20 @@ let studentInfo = {
 // Step 3: Add another property named photo with a value of the image path and name (used in Task 2) as a string
 "photo": "images/me.jpg",
 // Step 4: Add another property named favoriteFoods with a value of an array of your favorite foods as strings ( hint: [] )
-"favoriteFoods": ["banana", " apple", " watermelon"],
+"favoriteFoods": ["Banana", " Apple", " Watermelon"],
 // Step 5: Add another property named hobbies with a value of an array of your hobbies as strings
 "hobbies": ["Videogames", "Meet with friends"],
 // Step 6: Add another property named placesLived with a value of an empty array
 "placesLived": []
 };
 // Step 7: Inside of the empty array above, add a new object with two properties: place and length and values of an empty string
-studentInfo["placesLived"].push(venezuela = {"place": "", "length": ""})
+studentInfo["placesLived"].push({"place": "", "length": ""})
 // Step 8: For each property, add appropriate values as strings
 studentInfo["placesLived"][0]["place"] = "Venezuela";
 studentInfo["placesLived"][0]["length"] = "18 Years";
 // Step 9: Add additional objects with the same properties for each place you've lived
-studentInfo["placesLived"].push(colombia = {"place": "", "length": ""})
-studentInfo["placesLived"].push(argentina = {"place": "", "length": ""})
+studentInfo["placesLived"].push({"place": "", "length": ""})
+studentInfo["placesLived"].push({"place": "", "length": ""})
 studentInfo["placesLived"][1]["place"] = "Colombia";
 studentInfo["placesLived"][1]["length"] = "5 Years";
 studentInfo["placesLived"][2]["place"] = "Argentina";
@@ -59,22 +59,17 @@ hobbies.forEach(hobbie => {
 // - Create an HTML <dt> element and put its place property in the <dt> element
 // - Create an HTML <dd> element and put its length property in the <dd> element
 let placeLivedList = document.querySelector("#places-lived");
-//let placeProp = studentInfo["placeLived"]["place"];
-//let lengthProp = studentInfo["placeLived"]["length"];
+let placesLived = studentInfo["placesLived"];
 
-placeProp = studentInfo["placesLived"][0]["place"]
-lengthProp = studentInfo["placesLived"][0]["length"]
-
-placeProp.forEach(place => {
-    let dt = document.createElement("dt");
-    dt.textContent = place;
-    placeLivedList.append(dt);
-})
-
-lengthProp.forEach(length => {
-    let dd = document.createElement("dd");
-    dd.textContent = length;
-    placeLivedList.append(dd);
-})
-
+let fullPlaces = placesLived.map(function(element){
+    let dtElement = document.createElement("dt");
+    let ddElement = document.createElement("dd");
 // Step 9: Append the HTML <dt> and <dd> elements created above to the HTML <dl> element with an ID of places-lived
+    dtElement.textContent = element.place;
+    placeLivedList.append(dtElement);
+
+    ddElement.textContent = element.length;
+    placeLivedList.append(ddElement);
+    
+    return `${element.place} ${element.length}`
+})
