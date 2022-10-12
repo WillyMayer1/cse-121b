@@ -3,23 +3,51 @@
 /* IF/ELSE IF */
 
 // Step 1: Declare and initialize a new variable to hold the current date
-
+const date = new Date()
 // Step 2: Declare another variable to hold the day of the week
-
+let dayOfWeek = "";
 // Step 3: Using the variable declared in Step 1, assign the value of the variable declared in Step 2 to the day of the week ( hint: getDay() )
-
+dayOfWeek = date.getDay();
 // Step 4: Declare a variable to hold a message that will be displayed
-
+let message = "";
 // Step 5: Using an if statement, if the day of the week is a weekday (i.e. Monday - Friday), set the message variable to the string 'Hang in there!'
-
+if (dayOfWeek >= 1 & dayOfWeek < 6) {
+    message = "Hang in there!";
+    console.log(message);
+} 
 // Step 6: Using an else statement, set the message variable to 'Woohoo!  It is the weekend!'
-
+else {
+    message = "Woohoo! It is the weekend!";
+    console.log(message)};
 /* SWITCH, CASE, BREAK */
 
 // Step 1: Declare a new variable to hold another message
-
+let newMessage = "";
 // Step 2: Use switch, case and break to set the message variable to the day of the week as a string (e.g. Sunday, Monday, etc.) using the day of week variable declared in Step 2 above
-
+switch (dayOfWeek) {
+    case 0:
+        newMessage = "Sunday";
+        break;
+    case 1:
+        newMessage = "Monday";
+        break;
+    case 2:
+        newMessage = "Tuesday";
+        break;
+    case 3:
+        newMessage = "Wednesday";
+        break;
+    case 4:
+        newMessage = "Thursday";
+        break;
+    case 5:
+        newMessage = "Friday";
+        break;
+    case 6:
+        newMessage = "Saturday";
+        break;
+}
+console.log(newMessage);
 /* OUTPUT */
 
 // Step 1: Assign the value of the first message variable to the HTML element with an ID of message1
