@@ -54,7 +54,7 @@ document.querySelector("#message1").innerHTML = message1;
 document.querySelector("#message2").innerHTML = message2;
 /* FETCH */
 // Step 1: Declare a global empty array variable to store a list of temples
-
+let templeList = [];
 // Step 2: Declare a function named output that accepts a list of temples as an array argument and does the following for each temple:
 // - Creates an HTML <article> element
 // - Creates an HTML <h3> element and add the temple's templeName property to it
@@ -63,12 +63,21 @@ document.querySelector("#message2").innerHTML = message2;
 // - Creates an HTML <img> element and add the temple's imageUrl property to the src attribute and the temple's templeName property to the alt attribute
 // - Appends the <h3> element, the two <h4> elements, and the <img> element to the <article> element as children
 // - Appends the <article> element to the HTML element with an ID of temples
+function output(data) {
 
+}
 // Step 3: Create another function called getTemples. Make it an async function.
 // Step 4: In the function, using the built-in fetch method, call this absolute URL: 'https://byui-cse.github.io/cse121b-course/week05/temples.json'. Create a variable to hold the response from your fetch. You should have the program wait on this line until it finishes.
 // Step 5: Convert your fetch response into a Javascript object ( hint: .json() ). Store this in the templeList variable you declared earlier (Step 1). Make sure the the execution of the code waits here as well until it finishes.
 // Step 6: Finally, call the output function and pass it the list of temples. Execute your getTemples function to make sure it works correctly.
-
+async function getTemples() {
+    const url = 'https://byui-cse.github.io/cse121b-course/week05/temples.json';
+    const response = await fetch(url);
+    if (response.ok) {
+        const data = await response.json();
+        output(data);
+    }
+}
 // Step 7: Declare a function named reset that clears all of the <article> elements from the HTML element with an ID of temples
 
 // Step 8: Declare a function named sortBy that does the following:
