@@ -64,7 +64,24 @@ let templeList = [];
 // - Appends the <h3> element, the two <h4> elements, and the <img> element to the <article> element as children
 // - Appends the <article> element to the HTML element with an ID of temples
 function output(data) {
+    let listingTemples = templeList.map(function(temple){
 
+        templeId = document.querySelector("#temples");
+
+        let article = document.createElement("article");
+        let headingThree = document.createElement("h3");
+        let headingFour = document.createElement("h4");
+        let image = document.createElement("img");
+
+        //example = html-element.textContent = temple.key
+        headingThree.textContent = temple.templeName;
+        headingFour.textContent = temple.location;
+        headingFour.textContent = temple.dedicated;
+        image.TextContent = temple.imageUrl;
+        
+        
+
+    })
 }
 // Step 3: Create another function called getTemples. Make it an async function.
 // Step 4: In the function, using the built-in fetch method, call this absolute URL: 'https://byui-cse.github.io/cse121b-course/week05/temples.json'. Create a variable to hold the response from your fetch. You should have the program wait on this line until it finishes.
@@ -75,16 +92,21 @@ async function getTemples() {
     const response = await fetch(url);
     if (response.ok) {
         const data = await response.json();
-        output(data);
+        templeList(data);
+        console.log(templeList);
     }
 }
+getTemples()
 // Step 7: Declare a function named reset that clears all of the <article> elements from the HTML element with an ID of temples
-
+/*function reset()*/
 // Step 8: Declare a function named sortBy that does the following:
 // - Calls the reset function
 // - Sorts the global temple list by the currently selected value of the HTML element with an ID of sortBy
 // - Calls the output function passing in the sorted list of temples
+/*function sortBy() {
+    reset();
 
+}*/
 // Step 9: Add a change event listener to the HTML element with an ID of sortBy that calls the sortBy function
 
 /* STRETCH */
