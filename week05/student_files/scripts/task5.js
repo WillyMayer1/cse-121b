@@ -76,7 +76,6 @@ function output(data) {
         let headingFourDed = document.createElement("h4");
         let image = document.createElement("img");
 
-        //example = html-element.textContent = temple.key
         headingThree.textContent = temple.templeName;
         headingFourLoc.textContent = temple.location;
         headingFourDed.textContent = temple.dedicated;
@@ -104,17 +103,30 @@ async function getTemples() {
 }
 getTemples(templeList);
 // Step 7: Declare a function named reset that clears all of the <article> elements from the HTML element with an ID of temples
-/*function reset()*/
+function reset() {
+    return document.querySelector("#temples").innerHTML = "";
+}
 // Step 8: Declare a function named sortBy that does the following:
 // - Calls the reset function
 // - Sorts the global temple list by the currently selected value of the HTML element with an ID of sortBy
 // - Calls the output function passing in the sorted list of temples
-/*function sortBy() {
+function sortBy(e) {
     reset();
+    let sort = document.querySelector("#sortBy");
 
-}*/
+    if (e.target.value === 'templeNameAscending') {
+        let sorted = templeList.sort(function(a,b) {return a.templeName>b.templeName ? 1 : -1});
+        
+        return output(sorted);
+    
+      }else if (e.target.value === 'templeNameDescending') {
+        let sorted = templeList.sort(function(a,b) {return b.templeName>a.templeName ? 1 : -1});
+        
+        return output(sorted);
+      };
+}
 // Step 9: Add a change event listener to the HTML element with an ID of sortBy that calls the sortBy function
-
+document.getElementById('sortBy').addEventListener('change', sortBy);
 /* STRETCH */
 
 // Consider adding a "Filter by" feature that allows users to filter the list of temples
