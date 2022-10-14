@@ -64,23 +64,30 @@ let templeList = [];
 // - Appends the <h3> element, the two <h4> elements, and the <img> element to the <article> element as children
 // - Appends the <article> element to the HTML element with an ID of temples
 function output(data) {
-    let listingTemples = templeList.map(function(temple){
+        
+        templeList = data
+        templeList.map(function(temple){
 
         templeId = document.querySelector("#temples");
 
         let article = document.createElement("article");
         let headingThree = document.createElement("h3");
-        let headingFour = document.createElement("h4");
+        let headingFourLoc = document.createElement("h4");
+        let headingFourDed = document.createElement("h4");
         let image = document.createElement("img");
 
         //example = html-element.textContent = temple.key
         headingThree.textContent = temple.templeName;
-        headingFour.textContent = temple.location;
-        headingFour.textContent = temple.dedicated;
+        headingFourLoc.textContent = temple.location;
+        headingFourDed.textContent = temple.dedicated;
         image.TextContent = temple.imageUrl;
-        
-        
 
+        article.appendChild(headingThree);
+        article.appendChild(headingFourLoc);
+        article.appendChild(headingFourDed);
+        article.appendChild(image);
+        
+        templeId.appendChild(article);
     })
 }
 // Step 3: Create another function called getTemples. Make it an async function.
@@ -92,11 +99,10 @@ async function getTemples() {
     const response = await fetch(url);
     if (response.ok) {
         const data = await response.json();
-        templeList(data);
-        console.log(templeList);
+        output(data);
     }
 }
-getTemples()
+getTemples(templeList);
 // Step 7: Declare a function named reset that clears all of the <article> elements from the HTML element with an ID of temples
 /*function reset()*/
 // Step 8: Declare a function named sortBy that does the following:
