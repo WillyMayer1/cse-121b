@@ -13,17 +13,37 @@
     font-size: 3em;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin-bottom: 0px;
+    margin-left: 1em;
 }
 #news h3 {
     font-family: sans-serif;
+    font-size: 2em;
+    margin-bottom: 7px;
+}
+
+#news h4 {
+    font-size: 2em;
+    margin-top: 0px;
 }
 
 #news article {
     border: 5px solid gray;
     padding: 10px;
     margin: 10px;
+    border-radius: 10px;
 }
 img {
     width: 40%;
     height: 40%;
+}
+
+#news article p {
+    font-size: 1.7em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#news article h6 {
+    font-size: 1.2em;
+    margin-top: 1px;
+    margin-bottom: 0px;
 }

@@ -34,7 +34,7 @@ function output(data) {
     let headingThree = document.createElement("h3");
     let image = document.createElement("img");
     let par = document.createElement("p");
-    let parDate = document.createElement("p")
+    let parDate = document.createElement("h6")
     let headingFourSource = document.createElement("h4");
     let urlInfo = document.createElement("a");
 
@@ -50,6 +50,7 @@ function output(data) {
     article.appendChild(par);
     article.appendChild(image);
     article.appendChild(urlInfo);
+    urlInfo.innerHTML = "<p>More info</p>";
     article.appendChild(parDate);
     newsId.appendChild(article);
 
