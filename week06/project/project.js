@@ -20,21 +20,12 @@ document.getElementById('currentDay').innerHTML = `${currentWeek} ${currentDay},
 newsList = [];
 
 function output(data) {
-    /*newsList = data;
-    console.log(newsList);*/
-    let newsData = data["data"];
-    console.log(newsData);
-    /*
-    Keys:
-    author;
-    description;
-    image;
-    source;
-    title;
-    url;
-    */
-    
-    newsData.map(function(news){
+    newList = data;
+    console.log(newList);
+    newsArticle = newList["articles"];
+    console.log(newsArticle);
+        
+    newsArticle.map(function(news){
     
     newsId = document.querySelector('#news');
 
@@ -42,22 +33,33 @@ function output(data) {
     let headingTwo = document.createElement("h2");
     let headingThree = document.createElement("h3");
     let image = document.createElement("img");
-    let par = document.createElement("P");
+    let par = document.createElement("p");
+    let parDate = document.createElement("p")
+    let headingFourSource = document.createElement("h4");
+    let urlInfo = document.createElement("a");
 
     headingThree.textContent = news.title;
     par.textContent = news.desrcription;
-    image.src = news.image;
+    image.src = news.urlToImage;
+    parDate.textContent = news.publishedAt;
+    headingFourSource.textContent = news.source["name"];
+    urlInfo.href = news.url;
 
     article.appendChild(headingThree)
+    article.appendChild(headingFourSource);
     article.appendChild(par);
     article.appendChild(image);
+    article.appendChild(urlInfo);
+    article.appendChild(parDate);
     newsId.appendChild(article);
+
     });
 }
 
 
 async function getNews() {
-    const urlNews = 'http://api.mediastack.com/v1/news?access_key=b859ef733e2609ad61e1723b75e411e9';
+    const urlNews = 'https://newsapi.org/v2/top-headlines?country=us&apiKey=ad6e81177daa4389ab5a7119549d6772';
+    //api key ad6e81177daa4389ab5a7119549d6772
     const response = await fetch(urlNews);
     if (response.ok) {
         const data = await response.json();

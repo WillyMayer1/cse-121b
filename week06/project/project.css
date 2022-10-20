@@ -4,6 +4,14 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+#news {
+    width: 50%;
+}
 #news h3 {
     font-family: sans-serif;
+}
+
+img {
+    width: 40%;
+    height: 40%;
 }
