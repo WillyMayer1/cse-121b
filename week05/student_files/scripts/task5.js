@@ -79,7 +79,7 @@ function output(data) {
         headingThree.textContent = temple.templeName;
         headingFourLoc.textContent = temple.location;
         headingFourDed.textContent = temple.dedicated;
-        image.TextContent = temple.imageUrl;
+        image.src = temple.imageUrl;
 
         article.appendChild(headingThree);
         article.appendChild(headingFourLoc);

@@ -46,9 +46,11 @@ function output(data) {
 
     headingThree.textContent = news.title;
     par.textContent = news.desrcription;
+    image.src = news.image;
 
     article.appendChild(headingThree)
     article.appendChild(par);
+    article.appendChild(image);
     newsId.appendChild(article);
     });
 }
