@@ -1,15 +1,44 @@
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Playfair+Display&display=swap');
-
-
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Oswald:wght@500&family=Playfair+Display&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+}
 #welcome {
-    text-align: center;
+    text-align: relative;
     font-size: 150%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display:inline-block;
+    width: 100%;
 }
 
+#welcome h1 {
+    position:absolute;
+    top: 100px;
+    width: 100%;
+    text-align: center;
+    font-family: Oswald, sans-serif;
+    color: white;
+    font-size: 100px;
+    }
+
+#welcome h2 {
+    position: absolute;
+    top: 250px;
+    width: 100%;
+    text-align: center;
+    font-family: Oswald, sans-serif;
+    color: whitesmoke;
+    font-size: 30px;
+
+}
+#welcome img {
+    width: 100%;
+    height: 20em;
+    filter:brightness(50%);
+}
 #news {
     margin-left: 2em;
-    width: 50%;
+    width: 40%;
 }
 
 #news h2 {
@@ -38,8 +67,8 @@
     margin-left: 1px;
 }
 img {
-    width: 70%;
-    height: 70%;
+    width: 60%;
+    height: 60%;
 }
 
 #news article p {
