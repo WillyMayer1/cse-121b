@@ -20,8 +20,37 @@ document.getElementById('currentDay').innerHTML = `${currentWeek} ${currentDay},
 newsList = [];
 
 function output(data) {
-    newsList = data;
-    console.log(newsList);
+    /*newsList = data;
+    console.log(newsList);*/
+    let newsData = data["data"];
+    console.log(newsData);
+    /*
+    Keys:
+    author;
+    description;
+    image;
+    source;
+    title;
+    url;
+    */
+    
+    newsData.map(function(news){
+    
+    newsId = document.querySelector('#news');
+
+    let article = document.createElement("article");
+    let headingTwo = document.createElement("h2");
+    let headingThree = document.createElement("h3");
+    let image = document.createElement("img");
+    let par = document.createElement("P");
+
+    headingThree.textContent = news.title;
+    par.textContent = news.desrcription;
+
+    article.appendChild(headingThree)
+    article.appendChild(par);
+    newsId.appendChild(article);
+    });
 }
 
 
