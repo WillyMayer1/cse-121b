@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Playfair+Display&display=swap');
+
+
 #welcome {
     text-align: center;
     font-size: 150%;
@@ -5,8 +8,8 @@
 }
 
 #news {
+    margin-left: 2em;
     width: 50%;
-    margin-left: 5em;
 }
 
 #news h2 {
@@ -16,14 +19,15 @@
     margin-left: 1em;
 }
 #news h3 {
-    font-family: sans-serif;
+    font-family: "Playfair Display", sans-serif;
     font-size: 2em;
     margin-bottom: 7px;
 }
 
 #news h4 {
-    font-size: 2em;
+    font-size: 1.2em;
     margin-top: 0px;
+    font-family: "Libre Baskerville", sans-serif;
 }
 
 #news article {
@@ -33,17 +37,18 @@
     border-radius: 10px;
 }
 img {
-    width: 40%;
-    height: 40%;
+    width: 70%;
+    height: 70%;
 }
 
 #news article p {
-    font-size: 1.7em;
-    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+    font-family: "Libre Baskerville", Helvetica, sans-serif;
 }
 
 #news article h6 {
-    font-size: 1.2em;
+    font-size: 1em;
     margin-top: 1px;
     margin-bottom: 0px;
+    font-family: "Libre Baskerville", sans-serif;
 }

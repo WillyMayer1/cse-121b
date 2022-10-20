@@ -1,6 +1,5 @@
 
-myName = "Willian";
-document.getElementById('yourName').innerHTML = myName;
+document.getElementById('yourName').innerHTML = "visitor!";
 //Show the current time 
 const date = new Date();
 
