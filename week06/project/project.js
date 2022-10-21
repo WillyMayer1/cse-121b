@@ -1,5 +1,6 @@
-
+//Presentation
 document.getElementById('yourName').innerHTML = "visitor!";
+
 //Show the current time 
 const date = new Date();
 
@@ -16,8 +17,10 @@ const currentYear = date.getFullYear();
 document.getElementById('currentDay').innerHTML = `${currentWeek} ${currentDay}, ${currentMonth} ${currentYear}.`;
 
 /*Second part*/
+//Object to append all the news
 newsList = [];
 
+//Function to filter and show all the news
 function output(data) {
     newList = data;
     console.log(newList);
@@ -28,38 +31,46 @@ function output(data) {
     
     newsId = document.querySelector('#news');
 
+    /*Creating html elements: 
+    Keys to use:
+    title
+    source
+    urlToImage
+    url
+    publishedAt
+    */
     let article = document.createElement("article");
-    let headingTwo = document.createElement("h2");
-    let headingThree = document.createElement("h3");
+    let headingTitle = document.createElement("h3");
+    let headingSource = document.createElement("h4");
     let image = document.createElement("img");
-    let par = document.createElement("p");
+    let url = document.createElement("a");
     let parDate = document.createElement("h6")
-    let headingFourSource = document.createElement("h4");
-    let urlInfo = document.createElement("a");
-
-    headingThree.textContent = news.title;
-    par.textContent = news.desrcription;
+    
+    //Adding values
+    headingTitle.textContent = news.title;
+    url.textContent = news.desrcription;
     image.src = news.urlToImage;
     parDate.textContent = news.publishedAt;
-    headingFourSource.textContent = news.source["name"];
-    urlInfo.href = news.url;
+    headingSource.textContent = news.source["name"];
+    url.href = news.url;
 
-    article.appendChild(headingThree)
-    article.appendChild(headingFourSource);
-    article.appendChild(par);
+    //Appending it into the html file as children and filter it 
+    article.appendChild(headingTitle);
+    article.appendChild(headingSource);
     article.appendChild(image);
-    article.appendChild(urlInfo);
-    urlInfo.innerHTML = "<p>More info</p>";
+    article.appendChild(url);
+    url.innerHTML = "<p>More info</p>";
     article.appendChild(parDate);
     newsId.appendChild(article);
 
     });
 }
 
-
+//Receiving the news using API 
 async function getNews() {
     const urlNews = 'https://newsapi.org/v2/top-headlines?country=us&apiKey=ad6e81177daa4389ab5a7119549d6772';
-    //api key ad6e81177daa4389ab5a7119549d6772
+    /*api key ad6e81177daa4389ab5a7119549d6772
+    Calling through JSON and fetch function*/
     const response = await fetch(urlNews);
     if (response.ok) {
         const data = await response.json();
