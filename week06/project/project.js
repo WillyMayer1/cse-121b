@@ -6,7 +6,7 @@ const date = new Date();
 
 let dayOfWeek = date.getDay();
 
-const nameWeek = ["Monday", "Tuesday", "Wednesday", "Thurdsay", "Friday", "Saturday", "Sunday"];
+const nameWeek = [ "Sunday", "Monday", "Tuesday", "Wednesday", "Thurdsay", "Friday", "Saturday"];
 const nameMonth = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 const currentDay = date.getDate();
