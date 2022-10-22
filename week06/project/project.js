@@ -23,9 +23,8 @@ newsList = [];
 //Function to filter and show all the news
 function output(data) {
     newList = data;
-    console.log(newList);
+    
     newsArticle = newList["articles"];
-    console.log(newsArticle);
         
     newsArticle.map(function(news){
     
